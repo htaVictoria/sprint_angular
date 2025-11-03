@@ -1,0 +1,24 @@
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: content-box;
+}
+
+.logoFord{
+    width: 300px;
+}
+
+#carro{
+    width: 50%;
+}
+
+section{
+    width: 50%;
+    justify-content: center;
+}
+
+#login_input{
+    display: flex;
+    flex-direction: column;
+}
