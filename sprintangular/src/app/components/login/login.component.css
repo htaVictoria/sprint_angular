@@ -1,24 +1,47 @@
 body{
     display: flex;
-    align-items: center;
-    justify-content: center;
     box-sizing: content-box;
-}
-
-.logoFord{
-    width: 300px;
+    justify-content: center;
+    align-items: center;
 }
 
 #carro{
-    width: 50%;
+    width: 50rem;
+}
+
+.login{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+}
+
+.login #logoFord{
+    align-self: flex-start;
+}
+
+#logoFord img{
+    width: 30%;
+    align-items: center;
+    padding-left: 20%;
+    
 }
 
 section{
-    width: 50%;
-    justify-content: center;
+    display: flex;
+    width: 90%;
 }
 
-#login_input{
+.login form{
     display: flex;
     flex-direction: column;
+    width: 25rem;
+    gap: 10px;
+}
+
+.login form input{
+    border: 1px solid gray;
+    border-radius: 4px;
+    padding: 7px;
 }
