@@ -1,37 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap');
+
 body{
+    font-size: 30px;
+    font-family: "Roboto Flex", sans-serif;
+    margin: 0;
+    padding: 0;
     display: flex;
+    min-height: 100dvh;
+    width: 100dvw;
     box-sizing: content-box;
-    justify-content: center;
-    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 4px;
+
+}
+
+.imagem_carro{
+    flex-grow: 0;
+    display: flex;
 }
 
 #carro{
     width: 50rem;
+    padding-top: 50%;
 }
 
 .login{
     display: flex;
+    height: 100dvh;
     flex-direction: column;
-    justify-content: center;
+    flex-grow: 1;
+    justify-content: flex-start;
+    background-color: rgb(42, 71, 151);
     align-items: center;
-    padding: 1rem;
+    padding: 3rem;
 }
 
-.login #logoFord{
-    align-self: flex-start;
+.login_logo{
+    padding-top: 30px;
 }
 
-#logoFord img{
-    width: 30%;
-    align-items: center;
-    padding-left: 20%;
-    
+.login_texto{
+    margin-top: auto;
+    margin-bottom: 0;
+    font-weight: 400;
+    color: white;
 }
 
-section{
-    display: flex;
-    width: 90%;
+.login_formulario{
+    margin-bottom: auto;
+    margin-top: 0;
+    border: 1px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 15px;
+    padding: 4rem;
+    -webkit-box-shadow: 1px 3px 18px 10px rgba(0, 0, 0, 0.52); 
+    box-shadow: 1px 3px 18px 10px rgba(0, 0, 0, 0.52);
 }
+
+.formulario_botao{
+    border: none;
+    background-color: rgb(0, 0, 155);
+    color: white;
+    border-radius: 5px;
+    padding: 5px;
+    padding-inline: 15px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+#logoFord{
+    width: 200px;
+}
+
 
 .login form{
     display: flex;
