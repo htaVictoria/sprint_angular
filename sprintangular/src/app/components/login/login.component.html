@@ -14,11 +14,12 @@
                 <p>Faça seu login.</p>
             </div>
             <div class="login_formulario">
-                <form>
-                    <input type="text" name="usuario" id="usuario" placeholder="Nome de usuário" >
-                    <input type="password" name="senha" id="senha" placeholder="Senha">
+                <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
+                    <input  type="text" name="usuario" id="usuario" placeholder="Nome de usuário" formControlName="nome">
+                    <input  type="password" name="senha" id="senha" placeholder="Senha" formControlName="senha">
+                    <button type="submit" class="formulario_botao">Entrar</button>
                 </form>
-                <button class="formulario_botao">Entrar</button>
+
             </div>
         </div>
     </section>

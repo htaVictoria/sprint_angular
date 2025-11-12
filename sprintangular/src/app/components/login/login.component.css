@@ -6,9 +6,9 @@ body{
     margin: 0;
     padding: 0;
     display: flex;
-    min-height: 100dvh;
+    height: 100dvh;
     width: 100dvw;
-    box-sizing: content-box;
+    box-sizing: border-box;
     justify-content: space-between;
     flex-wrap: wrap;
     gap: 4px;
@@ -16,24 +16,21 @@ body{
 }
 
 .imagem_carro{
-    flex-grow: 0;
-    display: flex;
+    padding-top: 30%;
 }
 
 #carro{
-    width: 50rem;
-    padding-top: 50%;
+    width: 100%;
 }
 
 .login{
     display: flex;
-    height: 100dvh;
+    min-height: 100dvh;
     flex-direction: column;
-    flex-grow: 1;
     justify-content: flex-start;
     background-color: rgb(42, 71, 151);
     align-items: center;
-    padding: 3rem;
+    padding-inline: 3rem;
 }
 
 .login_logo{
@@ -84,5 +81,41 @@ body{
 .login form input{
     border: 1px solid gray;
     border-radius: 4px;
-    padding: 7px;
+    padding: 1rem;
+}
+
+@media screen and (max-width: 768px){
+    
+    html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+
+      body{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-sizing: border-box;
+      }
+      
+      app-root {
+        display: block;
+        min-height: 100%;
+      }
+
+    .imagem_carro{
+        display: none;
+    }
+
+    .login{
+        min-width: 100vw;
+
+    }
+
+    .login_formulario{
+        padding: 5rem 1rem;
+    }
+
+
 }
