@@ -1,4 +1,7 @@
-body{
-    background-color: aqua;
+*{
+  width: 100dvw;
 }
-  
+
+.example-spacer {
+    flex: 1 1 auto;
+  }

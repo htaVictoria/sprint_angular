@@ -15,9 +15,9 @@
                 <p>Faça seu login.</p>
             </div>
             <div class="login_formulario">
-                <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
-                    <input  type="text" name="usuario" id="usuario" placeholder="Nome de usuário" formControlName="nome">
-                    <input  type="password" name="senha" id="senha" placeholder="Senha" formControlName="senha">
+                <form (ngSubmit)="fazerLogin()" #loginForm="ngForm">
+                    <input [(ngModel)]="usuario.nome"  type="text" name="nome" id="nome" placeholder="Nome de usuário" >
+                    <input [(ngModel)]="usuario.senha"  type="password" name="senha" id="senha" placeholder="Senha">
                     <button type="submit" class="formulario_botao">Entrar</button>
                 </form>
             </div>

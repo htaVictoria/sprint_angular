@@ -1,49 +1,42 @@
 
 import { CommonModule } from '@angular/common';
-import { Component, inject,} from '@angular/core';
-import { FormControl, FormGroup, ReactiveFormsModule, } from '@angular/forms';
+import { Component,} from '@angular/core';
+import { FormsModule, ReactiveFormsModule, } from '@angular/forms';
 import { Router } from '@angular/router';
-import { AuthService } from '../../auth.service';
+import { AuthService } from '../../services/auth.service';
 
 
 
 
 @Component({
   selector: 'app-login',
-  imports: [ReactiveFormsModule, CommonModule, ],
+  imports: [ReactiveFormsModule, CommonModule, FormsModule],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css'
 })
 export class LoginComponent {
+
   
-  loginForm: FormGroup = new FormGroup({
-    nome: new FormControl(""),
-    senha: new FormControl("")
-  });
 
-  private authService = inject(AuthService);
-  private router = inject(Router);
+  usuario = {
+    nome: '',
+    senha: '',
+  }
 
-  onLogin() {
-    if (!this.loginForm.valid) {
-      alert('Preencha todos os campos!');
-      return;
-    }
+  erro: any
 
-    const formValue = this.loginForm.value;
+  constructor(
+    private authService: AuthService,
+    private router: Router
+  ) {}
 
-    this.authService.login(formValue).subscribe({
-      next: (response: any) => {
-        if (response.id) {
-          alert(`Bem-vindo(a), ${response.nome}!`);
-          this.router.navigateByUrl('/home');
-        } else {
-          alert('Usuário ou senha incorretos!');
-        }
+  fazerLogin() {
+    this.authService.login(this.usuario).subscribe({
+      next: (res) => {
+        this.router.navigate(['/home']);
       },
-      error: (err) => {
-        console.error(err);
-        alert('Erro ao fazer login!');
+      error: (_err) => {
+        this.erro = "Usuário ou senha inválidos";
       }
     });
   }

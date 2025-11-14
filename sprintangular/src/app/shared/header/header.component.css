@@ -1,0 +1,18 @@
+.header{
+    justify-content: space-between;
+    padding-inline: 5px;
+    width: 100dvw;
+    background-color: #120a4e;
+}
+
+button{
+    text-decoration: none;
+    color: white;
+    background-color: transparent;
+}
+
+.menu{
+    border: none;
+}
+
+

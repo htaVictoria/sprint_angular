@@ -1,0 +1,16 @@
+
+mat-drawer-container {
+    width: 500px;
+    height: 100vh;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    background-color: gray;
+  }
+
+ a{
+    text-decoration: none;
+  }
+
+  li{
+    display: flex;
+    flex-direction: column;
+  }
