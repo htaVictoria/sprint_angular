@@ -1,14 +1,15 @@
 
 <mat-drawer-container autosize *ngIf="navAberto" class="sidebar" mode="side" id="navContainer">
-    <nav>
-        <ul>
-            <li>
-            <a routerLink="./dashboard.component" >Dashboard</a>
-            </li>
-            <li>
-                <a routerLink="./home">Home</a>
-            </li>
-        </ul>
-    </nav>
-    
-  </mat-drawer-container>
+    <mat-drawer-content>
+        <nav>
+            <ul>
+                <li>
+                <a href="./dashboard">Dashboard</a>
+                </li>
+                <li>
+                    <a href="./login">Home</a>
+                </li>
+            </ul>
+        </nav>
+    </mat-drawer-content>
+</mat-drawer-container>

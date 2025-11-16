@@ -16,7 +16,8 @@ body{
 }
 
 .imagem_carro{
-    padding-top: 30%;
+    padding-top: 20%;
+    width: 50%;
 }
 
 #carro{

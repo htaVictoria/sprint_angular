@@ -1,14 +1,14 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
-import { MatToolbar } from "@angular/material/toolbar";
+import { MatToolbarModule } from "@angular/material/toolbar";
 import { NavService } from '../../services/nav/nav.service';
 
 
 
 @Component({
   selector: 'app-header',
-  imports: [MatButtonModule, MatIconModule, MatToolbar],
+  imports: [MatButtonModule, MatIconModule, MatToolbarModule],
   templateUrl: './header.component.html',
   styleUrl: './header.component.css'
 })
