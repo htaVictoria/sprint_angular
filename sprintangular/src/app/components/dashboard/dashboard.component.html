@@ -1,1 +1,92 @@
-<p>dashboard works!</p>
+<app-header></app-header>
+<app-navbar></app-navbar>
+
+<div class="container mt-4">
+
+    <!-- Busca por modelo -->
+    <div class="card p-3 mb-4">
+      <h5>Buscar Modelo do Veículo</h5>
+  
+      <input type="text"
+             class="form-control"
+             [(ngModel)]="pesquisaModelo"
+             (input)="filterModels()"
+             placeholder="Digite o modelo">
+  
+      <ul class="list-group mt-2" *ngIf="filtroModelo.length > 0">
+        <li class="list-group-item"
+            *ngFor="let m of filtroModelo"
+            (click)="selectModel(m)">
+          {{ m.vehicle }}
+        </li>
+      </ul>
+    </div>
+  
+  
+    <!-- Cards de informações -->
+    <div class="row mb-4" *ngIf="selectedModel">
+      
+      <div class="col-md-4">
+        <div class="card p-3 text-center">
+          <h6>Total de Vendas</h6>
+          <h3>{{ selectedModel.volumetotal }}</h3>
+        </div>
+      </div>
+  
+      <div class="col-md-4">
+        <div class="card p-3 text-center">
+          <h6>Veículos Conectados</h6>
+          <h3>{{ selectedModel.connected }}</h3>
+        </div>
+      </div>
+  
+      <div class="col-md-4">
+        <div class="card p-3 text-center">
+          <h6>Softwares Atualizados</h6>
+          <h3>{{ selectedModel.softwareUpdates }}</h3>
+        </div>
+      </div>
+  
+    </div>
+  
+  
+    <!-- Imagem -->
+    <div class="text-center my-4" *ngIf="selectedModel">
+      <img [src]="selectedModel.img" class="vehicle-img">
+    </div>
+  
+  
+    <!-- Busca por VIN -->
+    <div class="card p-3">
+      <h5>Buscar por Código VIN</h5>
+  
+      <input type="text"
+             class="form-control mb-3"
+             maxlength="17"
+             [(ngModel)]="pesquisaCodigo"
+             (input)="filterCodes()"
+             placeholder="Digite um VIN">
+  
+      <table class="table" *ngIf="dadosCodigo">
+        <thead>
+          <tr>
+            <th>Odômetro</th>
+            <th>Nível Combustível</th>
+            <th>Status</th>
+            <th>Latitude</th>
+            <th>Longitude</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{{ dadosCodigo.odometro }}</td>
+            <td>{{ dadosCodigo.nivelCombustivel }}</td>
+            <td>{{ dadosCodigo.status }}</td>
+            <td>{{ dadosCodigo.lat }}</td>
+            <td>{{ dadosCodigo.long }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  
+  </div>

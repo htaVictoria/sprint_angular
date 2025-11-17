@@ -1,6 +1,9 @@
-*{
+:host{
   width: 100dvw;
+  background-color: aqua;
+  height: 100%;
 }
+
 
 .example-spacer {
     flex: 1 1 auto;

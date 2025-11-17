@@ -34,12 +34,15 @@ export class LoginComponent {
     this.authService.login(this.usuario).subscribe({
       next: (res) => {
         this.router.navigate(['/home']);
+
+        console.log(this.authService.salvarToken)
       },
       error: (_err) => {
         this.erro = "Usuário ou senha inválidos";
       }
     });
   }
+
 }
 
   

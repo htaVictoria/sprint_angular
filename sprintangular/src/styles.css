@@ -1,10 +1,11 @@
 @import '@angular/material/prebuilt-themes/indigo-pink.css';
 
-* body{
+body{
     margin: 0;
     padding: 0;
     height: 100vh;
     width: 100vw;
+    display: flex;
     flex-wrap: wrap;
 }
 

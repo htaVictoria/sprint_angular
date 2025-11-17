@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap');
 
-body{
+:host{
     font-size: 30px;
     font-family: "Roboto Flex", sans-serif;
     margin: 0;
