@@ -16,6 +16,7 @@
 }
 
 .imagem_carro{
+    position: relative;
     padding-top: 20%;
     width: 50%;
 }

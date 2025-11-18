@@ -1,110 +1,118 @@
-/* ===========================
-   CONTAINER CENTRAL
-=========================== */
+/* ======== LAYOUT BASE ======== */
 .container {
   max-width: 1100px;
-  margin: 20px auto;
+  margin: auto;
 }
 
-/* ===========================
-   TÍTULO
-=========================== */
-h2, h3, h4, h5 {
-  font-weight: 600;
-  text-align: center;
+/* ======== TÍTULO ======== */
+h2 {
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #0d3b66;
 }
 
-/* ===========================
-   CARDS DO TOPO
-=========================== */
+/* ======== CARDS DO TOPO ======== */
 .top-cards {
   display: flex;
   justify-content: space-between;
-  gap: 20px;
+  gap: 15px;
   margin-bottom: 25px;
 }
 
 .card-info {
   flex: 1;
-  background: #ffffff;
+  background: white;
+  padding: 20px;
   border-radius: 12px;
-  padding: 18px;
   text-align: center;
-  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
-  border-top: 4px solid #0d6efd;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  transition: .2s ease-in-out;
+  border-top: 5px solid #003399; /* Azul Ford */
+}
+
+.card-info:hover {
+  transform: translateY(-4px);
 }
 
 .card-info h6 {
-  font-size: 16px;
-  color: #444;
+  font-size: 14px;
+  font-weight: 600;
+  color: #555;
+  margin-bottom: 8px;
 }
 
 .card-info h3 {
-  font-size: 24px;
-  margin-top: 10px;
-  color: #0d6efd;
+  font-size: 28px;
+  font-weight: bold;
+  color: #003399;
 }
 
-/* ===========================
-   INPUT DE MODELO
-=========================== */
-.model-card {
-  max-width: 350px;
-  margin: auto;
-  margin-bottom: 20px;
+/* ======== IMAGEM DO VEÍCULO ======== */
+.vehicle-img {
+  width: 70%;
+  max-width: 500px;
+  border-radius: 10px;
+  filter: drop-shadow(0 6px 14px rgba(0,0,0,0.35));
 }
 
-.model-card input {
-  height: 45px;
-  font-size: 15px;
+/* ======== CARD DE PESQUISA ======== */
+.model-card,
+.card {
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+  border: none;
 }
 
-/* ===========================
-   LISTA DE SUGESTÕES
-=========================== */
+.model-card h5,
+.card h5 {
+  font-weight: 700;
+  color: #003399;
+}
+
+/* ======== LISTA DE MODELOS ======== */
 .list-group-item {
   cursor: pointer;
+  transition: 0.2s;
 }
 
 .list-group-item:hover {
-  background: #eaeaea;
-}
-
-/* ===========================
-   IMAGEM DO CARRO
-=========================== */
-.vehicle-img {
-  width: 380px;
-  height: auto;
-  display: block;
-  margin: 20px auto 30px auto;
-  filter: drop-shadow(0px 5px 10px rgba(0,0,0,0.25));
-}
-
-/* ===========================
-   TABELA VIN
-=========================== */
-.table-container {
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 3px 10px rgba(0,0,0,0.15);
-}
-
-table thead {
-  background: #003f87;
+  background: #003399;
   color: white;
 }
 
-table td {
-  background: white;
-  vertical-align: middle;
+/* ======== TABELA ======== */
+.table-container {
+  margin-top: 20px;
 }
 
-/* ===========================
-   RESPONSIVO
-=========================== */
+.table {
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+}
+
+.table thead {
+  background: #003399;
+  color: white;
+}
+
+.table th {
+  text-align: center;
+}
+
+.table td {
+  text-align: center;
+  font-weight: 500;
+}
+
+/* ======== RESPONSIVIDADE ======== */
 @media (max-width: 768px) {
   .top-cards {
     flex-direction: column;
+  }
+
+  .vehicle-img {
+    width: 95%;
   }
 }

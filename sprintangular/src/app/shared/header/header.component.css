@@ -2,17 +2,21 @@
     justify-content: space-between;
     padding-inline: 5px;
     width: 100dvw;
-    background-color: #120a4e;
+    background-color: #00132d;
 }
 
-button{
+.menu{
     text-decoration: none;
+    border: none;
     color: white;
     background-color: transparent;
 }
 
-.menu{
-    border: none;
+.usuario{
+    border-radius: 50%;
+    cursor: pointer;
+    border: white;
+    background-color: rgba(132, 149, 164, 0.558);
 }
 
 

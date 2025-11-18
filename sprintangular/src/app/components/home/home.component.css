@@ -1,10 +1,42 @@
 :host{
   width: 100dvw;
-  background-color: aqua;
   height: 100%;
+  box-sizing: border-box;
 }
 
+app-navbar{
+  z-index: 2;
+}
 
 .example-spacer {
     flex: 1 1 auto;
-  }
+}
+
+header{
+  height: 64px;
+
+}
+
+main{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100dvw;
+}
+
+.imgCarro{
+  height: fit-content;
+  z-index: 0;
+}
+
+.mensagem{
+  align-self: center;
+  position: absolute;
+  padding: 250px;
+  z-index: 1;
+  color: aliceblue;
+  font-size: large;
+  background-color: #00255691;
+  border-radius: 12px;
+
+}
