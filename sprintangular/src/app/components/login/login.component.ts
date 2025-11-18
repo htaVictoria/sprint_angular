@@ -16,8 +16,6 @@ import { AuthService } from '../../services/auth.service';
 })
 export class LoginComponent {
 
-  
-
   usuario = {
     nome: '',
     senha: '',
@@ -33,11 +31,18 @@ export class LoginComponent {
   fazerLogin() {
     this.authService.login(this.usuario).subscribe({
       next: (res) => {
+  
+        // Salva o usuário
+        this.authService.salvarUsuario(res);
+  
+        // Se você usa token, pode salvar também
+        this.authService.salvarToken('tokenFalsoOuReal'); 
+  
+        // Vai para home
         this.router.navigate(['/home']);
-
-        console.log(this.authService.salvarToken)
       },
-      error: (_err) => {
+  
+      error: () => {
         this.erro = "Usuário ou senha inválidos";
       }
     });

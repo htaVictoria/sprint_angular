@@ -8,49 +8,54 @@
   <h2 class="text-center mb-4">Dashboard FORD</h2>
 
   <!-- CARDS DO TOPO -->
-  <div class="top-cards" *ngIf="selectedModel">
+
+  <div class="top-cards" >
+
+    <div class="card">
+      <h5>Buscar Modelo</h5>
   
-    <div class="card-info">
-      <h6>Total de Vendas</h6>
-      <h3>{{ selectedModel.volumetotal }}</h3>
+      <input type="text"
+             class="form-control"
+             [(ngModel)]="pesquisaModelo"
+             (input)="filterModels()"
+             placeholder="Digite o modelo">
+  
+      <ul class="list-group mt-2" *ngIf="filtroModelo.length > 0">
+        <li class="list-group-item"
+            *ngFor="let m of filtroModelo"
+            (click)="selectModel(m)">
+          {{ m.vehicle }}
+        </li>
+      </ul>
     </div>
+  
 
-    <div class="card-info">
-      <h6>Conectados</h6>
-      <h3>{{ selectedModel.connected }}</h3>
+      <div class="card-info" *ngIf="selectedModel">
+        <h6>Total de Vendas</h6>
+        <h3>{{ selectedModel.volumetotal }}</h3>
+      </div>
+  
+      <div class="card-info" *ngIf="selectedModel">
+        <h6>Conectados</h6>
+        <h3>{{ selectedModel.connected }}</h3>
+      </div>
+  
+      <div class="card-info" *ngIf="selectedModel">
+        <h6>Update Software</h6>
+        <h3>{{ selectedModel.softwareUpdates }}</h3>
+      </div>
+  
     </div>
-
-    <div class="card-info">
-      <h6>Update Software</h6>
-      <h3>{{ selectedModel.softwareUpdates }}</h3>
-    </div>
-
-  </div>
+    
 
   <!-- IMAGEM DO CARRO -->
-  <div class="text-center my-4" *ngIf="selectedModel">
+  <div class="imagemCarro" *ngIf="selectedModel">
     <img [src]="selectedModel.img" class="vehicle-img">
   </div>
 
 
   <!-- INPUT DE PESQUISA DE MODELO (AGORA EMBAIXO) -->
-  <div class="card p-3 model-card">
-    <h5>Buscar Modelo</h5>
-
-    <input type="text"
-           class="form-control"
-           [(ngModel)]="pesquisaModelo"
-           (input)="filterModels()"
-           placeholder="Digite o modelo">
-
-    <ul class="list-group mt-2" *ngIf="filtroModelo.length > 0">
-      <li class="list-group-item"
-          *ngFor="let m of filtroModelo"
-          (click)="selectModel(m)">
-        {{ m.vehicle }}
-      </li>
-    </ul>
-  </div>
+  
 
 
   <!-- INPUT DE PESQUISA VIN (EMBAIXO) -->
@@ -59,7 +64,7 @@
 
     <input type="text"
            class="form-control mb-3"
-           maxlength="17"
+           maxlength="20"
            [(ngModel)]="pesquisaCodigo"
            (input)="filterCodes()"
            placeholder="Digite um VIN">

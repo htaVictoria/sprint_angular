@@ -27,7 +27,7 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit(): void {
     this.veiculosService.getVehicles().subscribe(res => {
-      this.veiculos = res.vehicles; // << IMPORTANTE!
+      this.veiculos = res.vehicles; 
     });
   }
 
@@ -44,12 +44,28 @@ export class DashboardComponent implements OnInit {
   }
 
   filterCodes() {
-    if (this.pesquisaCodigo.length === 17) {
-      this.veiculosService.getVehicleData(this.pesquisaCodigo)
-        .subscribe(
-          data => this.dadosCodigo = data,
-          _err => this.dadosCodigo = null
-        );
+    const vin = this.pesquisaCodigo.trim().toUpperCase();
+
+    const vinValido = vin.length === 20;
+  
+    if (!vin) {
+      this.dadosCodigo = null;
+      return;
     }
-  }
+  
+    if (!vinValido) {
+      this.dadosCodigo = null;
+      return;
+    }
+  
+    this.veiculosService.getVehicleData(vin)
+      .subscribe({
+        next: (data) => {
+          this.dadosCodigo = data;
+        },
+        error: (err) => {
+          this.dadosCodigo = null;
+        }
+      });
+}
 }

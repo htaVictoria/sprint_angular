@@ -12,6 +12,13 @@ import { AuthService } from '../../services/auth.service';
 })
 export class HomeComponent {
 
+  usuario: any;
+
+constructor(private authService: AuthService) {}
+
+ngOnInit(): void {
+  this.usuario = this.authService.obterUsuario();
+}
   
 
 

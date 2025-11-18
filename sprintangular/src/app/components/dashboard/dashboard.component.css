@@ -48,6 +48,12 @@ h2 {
 }
 
 /* ======== IMAGEM DO VEÍCULO ======== */
+
+.imagemCarro{
+  display: flex;
+  justify-content: center;
+}
+
 .vehicle-img {
   width: 70%;
   max-width: 500px;
@@ -62,6 +68,7 @@ h2 {
   box-shadow: 0 4px 12px rgba(0,0,0,0.12);
   border: none;
 }
+
 
 .model-card h5,
 .card h5 {

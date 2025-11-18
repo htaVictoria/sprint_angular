@@ -16,16 +16,28 @@ export class AuthService {
   login(usuario: Pick<Usuario,'nome'| 'senha'>):Observable<Usuario>{
     return this.http.post<Usuario>(this.apiUrl, usuario)
   }
+  
   salvarToken(token: string) {
     localStorage.setItem('token', token);
+  }
+
+  salvarUsuario(usuario: any) {
+    localStorage.setItem('usuario', JSON.stringify(usuario));
+  }
+  
+  obterUsuario() {
+    const data = localStorage.getItem('usuario');
+    return data ? JSON.parse(data) : null;
+  }
+  
+  logout() {
+    localStorage.removeItem('token');
+    localStorage.removeItem('usuario');
   }
 
   usuarioLogado(): boolean {
     return !!localStorage.getItem('token');
   }
-
-  
-  
 
 }
 
